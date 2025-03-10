@@ -1,0 +1,55 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<TableSelectDialog
+		noDataText="No Scan Items"
+		title="Scan Items"
+		search=".handleSearch"
+		cancel=".handleClose"
+		items="{
+			path : '/items',
+			sorter : {
+				path : 'rma',
+				descending : false
+			}
+		}">
+		<ColumnListItem vAlign="Middle">
+			<cells>
+				<Text text="{rma}" />
+                <Text text="{mat}" />
+                <Text text="{batch}" />
+                <Text text="{quantity}" />
+                <Button icon="sap-icon://delete" press="onDeleteItem"/>
+				
+			</cells>
+		</ColumnListItem>
+		<columns>
+        <Column>
+				<header>
+					<Text text="RMA" />
+				</header>
+			</Column>
+			<Column>
+				<header>
+					<Text text="Material" />
+				</header>
+			</Column>
+			<Column>
+				<header>
+					<Text text="Batch" />
+				</header>
+			</Column>
+            <Column>
+				<header>
+					<Text text="Quantity" />
+				</header>
+			</Column>
+            <Column>
+				<header>
+					<Text text="" />
+				</header>
+			</Column>
+			
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

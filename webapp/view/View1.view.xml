@@ -1,0 +1,117 @@
+<mvc:View controllerName="zotcfscanmat.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m" 	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+    	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Scan Material"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="6"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label required="true" text="RMA/Pick up No." />
+				<Input required="true" id="idrmano" value="" />
+				
+			</f:content>
+		</f:SimpleForm>
+        		<Panel class="sapUiDemoFlexBoxSizeAdjustments sapUiSmallMarginTop">
+        <FlexBox alignItems="Start">
+				<Button icon="sap-icon://bar-code" width="90%" type="Emphasized" class="sapUiSmallMarginEnd" press=".onClickScan">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Button>
+				<Button text="Scan List" width="90%" class="sapUiSmallMarginEnd" press=".onShowScanItems">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Button>
+				<!-- <Button text="Compare" width="90%" type="Accept" >
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Button> -->
+			</FlexBox>
+            		</Panel>
+
+
+		<!-- <VBox class="sapUiSmallMargin"> -->
+		<f:SimpleForm 
+		class="sapUiSmallMarginTop"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="4"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Material" />
+				<Input id= "idMaterialNo" liveChange="onScanMaterial"  change="onPushScanMaterial"/>
+                <Label text="Batch" visible="false"/>
+				<Input id= "idBatchNo" enabled = "false" visible="false"/>
+                <Label text="Scan Quatity"  visible="false"/>
+				<Input id= "idQuantity" enabled = "false"  visible="false"/>
+				
+			</f:content>
+		</f:SimpleForm>
+
+
+		<Panel class="sapUiDemoFlexBoxSizeAdjustments sapUiSmallMarginTop">
+        <FlexBox alignItems="Start">
+				
+				<Button text="Compare" width="90%" type="Accept" press="onCompare">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Button>
+			</FlexBox>
+            		</Panel>
+<f:SimpleForm
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" 
+			class="sapUiSmallMarginTop">
+			<f:content>
+				<Label text="Comparison Result" />
+				<TextArea id="idComapretext" rows="4" enabled = "false"  text="" />
+				
+			</f:content>
+		</f:SimpleForm>
+
+	<!-- </VBox> -->
+	</VBox>
+</mvc:View>
