@@ -7,7 +7,7 @@
 		search=".handleSearch"
 		cancel=".handleClose"
 		items="{
-			path : '/items',
+			path : 'oScanModel>/items',
 			sorter : {
 				path : 'rma',
 				descending : false
@@ -15,10 +15,10 @@
 		}">
 		<ColumnListItem vAlign="Middle">
 			<cells>
-				<Text text="{rma}" />
-                <Text text="{mat}" />
-                <Text text="{batch}" />
-                <Text text="{quantity}" />
+				<Text text="{oScanModel>Rma}" />
+                <Text text="{oScanModel>Matnr}" />
+                <Text text="{oScanModel>Batch}" />
+                <Text text="{oScanModel>ScanQty}" />
                 <Button icon="sap-icon://delete" press="onDeleteItem"/>
 				
 			</cells>

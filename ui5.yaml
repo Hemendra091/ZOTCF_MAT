@@ -15,6 +15,11 @@ server:
             - /resources
             - /test-resources
           url: https://ui5.sap.com
+        backend:
+        - path: /sap
+          url: http://vhpnbsd2ci.hec.penumbrainc.com:44300
+          client: '300'
+          destination: S4_HEC_GW
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

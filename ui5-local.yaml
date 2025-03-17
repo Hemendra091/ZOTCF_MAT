@@ -29,3 +29,8 @@ server:
       afterMiddleware: compression
       configuration:
         ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        backend:
+          - path: /sap
+            url: http://vhpnbsd2ci.hec.penumbrainc.com:44300
+            client: '300'
+            destination: S4_HEC_GW
