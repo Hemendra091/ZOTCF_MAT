@@ -3,61 +3,17 @@
     xmlns="sap.m" 	xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
 	xmlns:core="sap.ui.core">
-    	<VBox class="sapUiSmallMargin">
-		<f:SimpleForm id="SimpleFormChange354"
-			editable="true"
-			layout="ResponsiveGridLayout"
-			title="Scan Material"
-			labelSpanXL="3"
-			labelSpanL="3"
-			labelSpanM="3"
-			labelSpanS="6"
-			adjustLabelSpan="false"
-			emptySpanXL="4"
-			emptySpanL="4"
-			emptySpanM="4"
-			emptySpanS="0"
-			columnsXL="1"
-			columnsL="1"
-			columnsM="1"
-			singleContainerFullSize="false" >
-			<f:content>
-				<Label required="true" text="RMA/Pick up No." />
-				<Input required="true" id="idrmano" value="" />
+	<Page enableScrolling="true" showHeader="false" showFooter="true">
+	<content>
+	
+    	<!-- <VBox class="sapUiSmallMargin"> -->
+		
+        		<Panel>
 				
-			</f:content>
-		</f:SimpleForm>
-        		<Panel class="sapUiDemoFlexBoxSizeAdjustments sapUiSmallMarginTop">
-        <FlexBox alignItems="Start">
-		<ToggleButton icon="sap-icon://bar-code" width="90%" id="toggleScanButtonID" text="Scan On" class="sapUiSmallMarginEnd" pressed="true" press="onPressScanToggle" type="Accept">
-		<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-				</ToggleButton>
-				<!-- <Button icon="sap-icon://bar-code" width="90%" type="Emphasized" class="sapUiSmallMarginEnd" press=".onClickScan">
-					<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-				</Button> -->
-				<Button text="Scan List" width="90%" class="sapUiSmallMarginEnd" press=".onShowScanItems">
-					<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-				</Button>
-				<!-- <Button text="Compare" width="90%" type="Accept" >
-					<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-				</Button> -->
-			</FlexBox>
-			<Text text="Total Scan Items : {oScanModel>/total}"/>
-            		</Panel>
-
-
-		<!-- <VBox class="sapUiSmallMargin"> -->
-		<f:SimpleForm 
-		class="sapUiSmallMarginTop"
+			
+			<f:SimpleForm class="sapUiTinyMarginTopBottom"
 			editable="true"
+			title="Scan Material"
 			layout="ResponsiveGridLayout"
 			labelSpanXL="3"
 			labelSpanL="3"
@@ -68,26 +24,36 @@
 			emptySpanL="4"
 			emptySpanM="4"
 			emptySpanS="0"
-			columnsXL="1"
-			columnsL="1"
-			columnsM="1"
+			columnsXL="3"
+			columnsL="3"
+			columnsM="2"
 			singleContainerFullSize="false" >
 			<f:content>
-				<Label text="Barcode" />
-				<Input id= "idMaterialNo" liveChange="onScanMaterial"  change="onPushScanMaterial"/>
+			<Label required="true" text="RMA/Pick up No." />
+				<Input required="true" type="Number" id="idrmano" value="" />
+			<Label text="Total Scan Items"/>
+			<Text text="{oScanModel>/TotalScanQty}"/>
+				
 				<!-- <core:Title/> -->
 				<Label text="Last Scan Material" />
 				<Text id="idLastScanMat" text=""/>
                 <Label text="Last Scan Batch"/>
 				<Text id="idLastScanBatch" text=""/>
+				<Label text="Barcode" />
+				<Input id= "idMaterialNo" liveChange="onScanMaterial"  change="onPushScanMaterial"/>
                 <!-- <Label text="Last Scan Material Total Quatity"/>
 				<Text id="idLastScanQuant" text=""/> -->
 				
 			</f:content>
 		</f:SimpleForm>
+            		</Panel>
 
 
-		<Panel class="sapUiDemoFlexBoxSizeAdjustments sapUiSmallMarginTop">
+		<!-- <VBox class="sapUiSmallMargin"> -->
+		
+
+
+		<!-- <Panel class="sapUiDemoFlexBoxSizeAdjustments sapUiSmallMarginTop">
         <FlexBox alignItems="Start">
 				
 				<Button text="Compare" width="90%" type="Accept" press="onCompare">
@@ -96,7 +62,7 @@
 					</layoutData>
 				</Button>
 			</FlexBox>
-            		</Panel>
+            		</Panel> -->
 <f:SimpleForm
 			editable="true"
 			layout="ResponsiveGridLayout"
@@ -122,5 +88,19 @@
 		</f:SimpleForm>
 
 	<!-- </VBox> -->
-	</VBox>
+	<!-- </VBox> -->
+	</content>
+	<footer>
+	<Toolbar >
+	<ToggleButton icon="sap-icon://bar-code"  id="toggleScanButtonID" text="Scan On"  pressed="true" press="onPressScanToggle" type="Accept"/>
+		
+				
+				<Button text="Scan List"  press=".onShowScanItems"/>
+					
+	<ToolbarSpacer />
+	<Button text="Compare" type="Emphasized" press="onCompare"/>
+	
+	</Toolbar>
+	</footer>
+	</Page>
 </mvc:View>

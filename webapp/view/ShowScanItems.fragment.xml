@@ -7,9 +7,9 @@
 		search=".handleSearch"
 		cancel=".handleClose"
 		items="{
-			path : 'oScanModel>/items',
+			path : 'oScanModel>/HdrToItm',
 			sorter : {
-				path : 'rma',
+				path : 'Rma',
 				descending : false
 			}
 		}">
