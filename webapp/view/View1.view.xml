@@ -10,7 +10,20 @@
 		
         		<Panel>
 				
-			
+			<!-- <MessageStrip
+			id="idScanStartMessage"
+			visible="false"
+				text="Scanning Now..."
+				type="Success"
+				showIcon="true"
+				showCloseButton="false">
+			</MessageStrip> -->
+			<!-- <MessageStrip
+				text="Scanning Now..."
+				type="Error"
+				showIcon="true"
+				showCloseButton="false">
+			</MessageStrip> -->
 			<f:SimpleForm class="sapUiTinyMarginTopBottom"
 			editable="true"
 			title="Scan Material"
@@ -35,7 +48,7 @@
 			<Text text="{oScanModel>/TotalScanQty}"/>
 				
 				<!-- <core:Title/> -->
-				<Label text="Last Scan Material" />
+				<Label text="Last Scan EAN/UPC" />
 				<Text id="idLastScanMat" text=""/>
                 <Label text="Last Scan Batch"/>
 				<Text id="idLastScanBatch" text=""/>
@@ -82,7 +95,7 @@
 			class="sapUiSmallMarginTop">
 			<f:content>
 				<Label text="Comparison Result" />
-				<TextArea id="idComapretext" rows="4" enabled = "false"  value="" />
+				<TextArea id="idComapretext" rows="2" enabled = "false"  value="" />
 				
 			</f:content>
 		</f:SimpleForm>

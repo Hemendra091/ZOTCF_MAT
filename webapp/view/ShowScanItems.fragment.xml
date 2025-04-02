@@ -29,9 +29,9 @@
 					<Text text="RMA" />
 				</header>
 			</Column>
-			<Column>
+			<Column width="6rem">
 				<header>
-					<Text text="Material" />
+					<Text text="EAN/UPC" />
 				</header>
 			</Column>
 			<Column>

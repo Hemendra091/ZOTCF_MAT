@@ -13,8 +13,10 @@ sap.ui.define([
         onPressScanToggle: function (oEvt) {
             var oRMAControl = this.getView().byId("idrmano");
             var sRMANo = oRMAControl.getValue();
+            // oMsgStrip = this.getView().byId("idScanStartMessage");
 
             if (oEvt.getParameter("pressed")) {
+                // oMsgStrip.setVisible(false);
                 oEvt.getSource().setText("Scan On")
                 oEvt.getSource().setType("Accept")
                 this.getView().getModel("oScanModel").setData({ HdrToItm: [], TotalScanQty: "0" });
@@ -27,7 +29,8 @@ sap.ui.define([
             } else {
 
                 if (sRMANo) {
-                    oEvt.getSource().setText("Scan Off")
+                    // oMsgStrip.setVisible(true);
+                    oEvt.getSource().setText("Scanning...")
                     oEvt.getSource().setType("Reject")
                     oRMAControl.setValueState("None");
                     this.getView().byId("idComapretext").setValue("");
